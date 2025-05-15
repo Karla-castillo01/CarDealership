@@ -14,7 +14,7 @@ class DealershipFileManager {
         }
         BufferedReader br = new BufferedReader(fr);
 
-        //READ FIRST LINE
+
         String firstLine = null;
         try {
             firstLine = br.readLine();
@@ -44,8 +44,7 @@ class DealershipFileManager {
                 int MILES = 6;
                 int PRICE = 7;
                 data = line.split("\\|");
-                //MORE LINES - ADD VEHICLE
-                int vin = Integer.parseInt(data[VIN]); //NOT A STRING?
+                int vin = Integer.parseInt(data[VIN]);
                 int year = Integer.parseInt(data[YEAR]);
                 String make = data[MAKE];
                 String model = data[MODEL];
@@ -77,7 +76,7 @@ class DealershipFileManager {
         }
         BufferedWriter bw = new BufferedWriter(fw);
 
-        //write first line - dealer info
+
         String info = String.format("%s|%s|%s\n",
                 dealership.getName(),
                 dealership.getAddress(),
@@ -89,9 +88,9 @@ class DealershipFileManager {
             throw new RuntimeException(e);
         }
 
-        //write line - per vehicle
+
         for (Vehicle v : dealership.getAllVehicles()) {
-//            10112|1993|Ford|Explorer|SUV|Red|525123|995.00
+
 
             try {
                 bw.write(String.format(

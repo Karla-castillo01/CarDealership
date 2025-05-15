@@ -122,16 +122,8 @@ class Dealership {
                 10_000
         ));
 
-        //SHOW DEALERSHIP
         System.out.println(d);
 
-        //SHOW INVENTORY
-//        var matches = d.getVehiclesByColor("WHITE");
-//        var matches = d.getAllVehicles();
-//        var matches = d.getVehiclesByYear(2000, 2025);
-//        var matches = d.getVehiclesByType("ROADSTER");
-//        var matches = d.getVehiclesByPrice(4000,6000);
-//        var matches = d.getVehiclesByMileage(1,111_000);
         var matches = d.getVehiclesByMakeModel("MAZDA", "MX-5");
         if (matches.size() == 0) {
             System.out.println("NO MATCHES");
