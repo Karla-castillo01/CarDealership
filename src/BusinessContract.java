@@ -1,29 +1,30 @@
 import java.util.Date;
 
-abstract class BusinessContract {
+public abstract class BusinessContract {
     private Date date;
     private String customerName;
     private String customerEmail;
     private boolean isSold;
     private double totalPrice;
     private double monthlyPayment;
+    Vehicle vehicle;
 
     BusinessContract(
+        Vehicle vehicle,
         Date date,
         String customerName,
         String customerEmail,
         boolean isSold,
-        double totalPrice,
-        double monthlyPayment
+        double totalPrice
     ) {
+     this.vehicle = vehicle;
      this.date = date;
      this.customerName = customerName;
      this.isSold = isSold;
      this.totalPrice = totalPrice;
-     this.monthlyPayment = monthlyPayment;
     }
-    public String toString({
-        return """
+    public String toString(){
+        return String.format("""
         %s
         %s
         %s
@@ -33,14 +34,11 @@ abstract class BusinessContract {
         """,
         this.date,
         this.customerName,
-        this.isSold,
+        this.isSold ? "YES": "NO",
         this.totalPrice,
         this.monthlyPayment
         );
-
     }
-
-
     public Date getDate() {
         return date;
     }
@@ -68,11 +66,11 @@ abstract class BusinessContract {
 //      BusinessContract bc = new BusinessContract(
 //           new Date(),
 //         "Karla Castillo",
-//       "Karlacastbg03@gmail.com",
-//     true,
-//   10000.00,
-// 500.00
+//          "Karlacastbg03@gmail.com",
+//          true,
+//          10000.00,
+//          500.00
 //      );
-//System.out.println(bc);
+//         System.out.println(bc);
 //}
 
